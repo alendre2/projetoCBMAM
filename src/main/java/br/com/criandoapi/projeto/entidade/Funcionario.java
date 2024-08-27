@@ -1,12 +1,10 @@
 package br.com.criandoapi.projeto.entidade;
 
 import jakarta.persistence.*;
-
-import javax.xml.crypto.Data;
 import java.util.Date;
 
 @Entity
-@Table (name = "funcionario")
+@Table(name = "funcionario")
 public class Funcionario {
 
     @Id
@@ -22,10 +20,10 @@ public class Funcionario {
     @Column(name = "telefone", length = 100, nullable = false)
     private String telefone;
 
-    @Column(name = "salario",precision = 10, scale = 2, nullable = false)
+    @Column(name = "salario", nullable = false)
     private Double salario;
 
-    @Column (name = "dataAdmissao",nullable = false)
+    @Column(name = "dataAdmissao", nullable = false)
     @Temporal(TemporalType.DATE)
     private Date dataAdmissao;
 
@@ -40,7 +38,8 @@ public class Funcionario {
 
     public Funcionario() {
     }
-    public Funcionario( String nome, String email, String telefone, Double salario, Date dataAdmissao, String cargo, String departamento, String endereco) {
+
+    public Funcionario(String nome, String email, String telefone, Double salario, Date dataAdmissao, String cargo, String departamento, String endereco) {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
@@ -62,6 +61,7 @@ public class Funcionario {
         this.departamento = departamento;
         this.endereco = endereco;
     }
+
 
     public Long getId() {
         return id;
